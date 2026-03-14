@@ -1,0 +1,7 @@
+/*./src/main/resources/static/css*/
+
+/* @import "tailwindcss/preflight";
+/* @tailwind components; */
+/* @tailwind utilities; */ 
+
+@import "tailwindcss";
