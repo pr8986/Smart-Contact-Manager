@@ -19,7 +19,7 @@ function changeTheme() {
     
     changeThemeButton.addEventListener('click', (event) => {       
 
-        const oldTheme=currentTheme;
+        let oldTheme=currentTheme;
         console.log("change theme button clicked");
 
         if (currentTheme === "dark") {
@@ -30,7 +30,8 @@ function changeTheme() {
             //theme ko dark krna hai
             currentTheme = "dark";
         }
-
+        console.log(currentTheme);
+        
         changePageTheme(currentTheme,oldTheme);
     });
 }
