@@ -4,7 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.scm.entities.User;
+import com.scm.forms.UserForm;
 
 @Controller
 public class PageController {
@@ -49,7 +53,27 @@ public class PageController {
 
     //Register Page
     @GetMapping("/register")
-    public String register(){
+    public String register(Model model){
+
+        UserForm userForm=new UserForm();
+        //default data bhi daal skte hai
+        model.addAttribute("userForm", userForm);
+
         return "register";
+    }
+
+    //processing register
+    @RequestMapping(value="/do-register" , method=RequestMethod.POST)
+    public String processRegister(){
+        System.out.println("Processing Register Form");
+
+        //fetch form data
+        //UserForm 
+        
+        //validate form data
+        //save to database
+        //message="Registration successful"
+        //redirect to login page
+        return "redirect:/register";
     }
 }
