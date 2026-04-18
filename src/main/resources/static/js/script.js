@@ -16,10 +16,9 @@ function changeTheme() {
     const changeThemeButton = document.querySelector('#theme_change_button');
 
     
-    
     changeThemeButton.addEventListener('click', (event) => {       
 
-        const oldTheme=currentTheme;
+        let oldTheme=currentTheme;
         console.log("change theme button clicked");
 
         if (currentTheme === "dark") {
@@ -30,7 +29,8 @@ function changeTheme() {
             //theme ko dark krna hai
             currentTheme = "dark";
         }
-
+        console.log(currentTheme);
+        
         changePageTheme(currentTheme,oldTheme);
     });
 }
@@ -50,7 +50,7 @@ function getTheme() {
 //change current page theme
 function changePageTheme(theme,oldTheme) {
     //localStorage me update karenge
-    setTheme(currentTheme);
+    setTheme(theme);
 
 
     //remove the current theme
@@ -64,6 +64,10 @@ function changePageTheme(theme,oldTheme) {
     //change the text of button
     document.querySelector('#theme_change_button').querySelector("span").textContent =
         theme == "light" ? "Dark" : "Light";
+
+    
 }
 
 //End of change theme work
+
+

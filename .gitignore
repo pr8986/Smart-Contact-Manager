@@ -34,3 +34,5 @@ build/
 
 node_modules/
 package-lock.json
+application-dev.properties
+application.properties
